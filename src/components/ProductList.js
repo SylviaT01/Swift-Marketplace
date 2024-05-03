@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 function ProductList() {
     const [products, setProducts] = useState([])
@@ -12,6 +13,7 @@ function ProductList() {
 
     return (
         <section className="mb-8">
+            <Link to="/">Home</Link>
             <h2 className="text-xl font-semibold mb-4">Product Catalog</h2>
             <div className="grid grid-cols-3 gap-4">
                 {products.map((product, index) => (
