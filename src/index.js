@@ -6,6 +6,7 @@ import App from './App';
 import ProductList from './components/ProductList';
 import ContactForm from './components/contact';
 import LoginForm from './components/login';
+import FeedbackForm from './components/feedback';
 // import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <ContactForm />
+  },
+  {
+    path: "/feedback",
+    element: <FeedbackForm />
   },
 
 ]);
