@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css';
 import App from './App';
 import ProductList from './components/ProductList';
+import Login from './components/login';
 // import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
@@ -14,7 +15,11 @@ const router = createBrowserRouter([
   {
     path: "/products",
     element: <ProductList />
-  }
+  },
+  {
+    path: "/login",
+    element: <Login />
+  },
 
 ]);
 
