@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Categories from './categories';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+
+
+
 
 function ProductList() {
     const [products, setProducts] = useState([]);
@@ -11,12 +16,22 @@ function ProductList() {
         fetch('https://dummyjson.com/products?limit=0')
             .then(res => res.json())
             .then(data => {
-                setProducts(data.products);
-                // Extract and set categories
-                const uniqueCategories = [...new Set(data.products.map(product => product.category))];
+                // Filter out categories and brands from the products
+                const filteredProducts = data.products.filter(product =>
+                    product.category !== "smartphones" && product.brand !== "luxury palace" && product.brand !== "Bracelet" && product.brand !== "fauji"
+                );
+
+                // Extract and set categories from filtered products
+                const uniqueCategories = [...new Set(filteredProducts.map(product => product.category))];
                 setCategories(uniqueCategories.map((category, index) => ({ id: index, name: category })));
+
+                // Set filtered products
+                setProducts(filteredProducts);
             });
     }, []);
+
+
+    
 
     const filterProductsByCategory = categoryId => {
         setSelectedCategory(categoryId);
@@ -25,6 +40,7 @@ function ProductList() {
     const filteredProducts = selectedCategory
         ? products.filter(product => product.category === categories[selectedCategory].name)
         : products;
+
 
     return (
         <section className="mb-8">
@@ -37,20 +53,34 @@ function ProductList() {
                     onSelectCategory={filterProductsByCategory}
                 />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0">
                 {filteredProducts.map((product, index) => (
                     <div key={index} className="border p-4 flex flex-col justify-between shadow-md shadow-black">
-                        <div className="flex-grow">
-                            <h3 className="text-lg font-semibold mb-2">{product.title}</h3>
-                            <div className="image-container">
-                                <img src={product.thumbnail} alt={product.title} className="w-full h-full mb-2" />
+                        <h2 className="font-medium text-base mb-1">{product.title}</h2>
+                        <div className="flex-grow border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition">
+                            <div className="w-full h-full flex justify-center items-center">
+                                <div className="w-[200px] mx-auto flex justify-center items-center ">
+                                    {/* <img src={product.thumbnail} alt={product.title} className="max-h-[160px] group-hover:scale-110 transition duration-300" /> */}
+                                    <Swiper
+                                        spaceBetween={30}
+                                        navigation
+                                        pagination={{ clickable: true }}
+                                    >
+                                        {product.images.map((image, imageIndex) => (
+                                            <SwiperSlide key={imageIndex}>
+                                                <img src={image} alt={`Product avatar ${imageIndex + 1}`} className="max-h-[300px] object-cover" />
+                                            </SwiperSlide>
+                                        ))}
+                                    </Swiper>
+                                </div>
                             </div>
                         </div>
                         <div>
-                            <p className="mb-2 text-sm"><span className="font-semibold text-sm">Brand:</span> {product.brand}</p>
-                            <p className="mb-2 text-sm"><span className="font-semibold text-sm">Description:</span> {product.description}</p> 
-                            <p className="mb-2 text-sm"><span className="font-semibold text-sm">Price:</span> ${product.price}</p>
-                            <p className="mb-2 text-sm"><span className="font-semibold text-sm">Category:</span> {product.category}</p>
+                            <div className="text-sm capitalize text-gray-500 mb-1">
+                                {product.category}
+                            </div>
+                            <div className="font-medium">$ {product.price}</div>
+                            <button className=" bg-red-400 p-2">Buy Now</button>
                         </div>
                     </div>
                 ))}
@@ -58,5 +88,6 @@ function ProductList() {
         </section>
     );
 }
+
 
 export default ProductList;
