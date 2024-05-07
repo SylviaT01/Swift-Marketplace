@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import { Link } from "react-router-dom";
 import Categories from './categories';
 import { Navbar } from './navbar';
+import { useCart } from './cart-context'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -12,8 +13,9 @@ function ProductList() {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
-    const [cartItems, setCartItems] = useState([]);
+    const { addToCart } = useCart();
 
+    
     useEffect(() => {
         fetch('https://dummyjson.com/products?limit=0')
             .then(res => res.json())
@@ -33,6 +35,10 @@ function ProductList() {
     }, []);
 
 
+    const handleAddToCart = (product) => {
+        addToCart(product);
+        // console.log("Product added to cart:", product);
+      };
     
 
     const filterProductsByCategory = categoryId => {
@@ -43,10 +49,6 @@ function ProductList() {
         ? products.filter(product => product.category === categories[selectedCategory].name)
         : products;
     
-    const addToCart = (product) => {
-        setCartItems([...cartItems, product]);
-    };
-
 
     return (
     
@@ -88,7 +90,7 @@ function ProductList() {
                                 {product.category}
                             </div>
                             <div className="font-medium">$ {product.price}</div>
-                            <button className=" bg-red-400 p-2" onClick={() => addToCart(product)}>Buy Now</button>
+                            <button className=" bg-red-400 p-2" onClick={() => handleAddToCart(product)}>Buy Now</button>
                         </div>
                     </div>
                 ))}
