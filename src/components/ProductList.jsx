@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Categories from './categories';
+import { Navbar } from './navbar';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -11,6 +12,7 @@ function ProductList() {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
         fetch('https://dummyjson.com/products?limit=0')
@@ -40,11 +42,17 @@ function ProductList() {
     const filteredProducts = selectedCategory
         ? products.filter(product => product.category === categories[selectedCategory].name)
         : products;
+    
+    const addToCart = (product) => {
+        setCartItems([...cartItems, product]);
+    };
 
 
     return (
+    
         <section className="mb-8">
-            <Link to="/">Home</Link>
+            {/* <Link to="/">Home</Link> */}
+            <Navbar />
             <h2 className="text-xl font-semibold text-center  mb-4">Product Catalog</h2>
             <div className="text-center mb-4">
                 <Categories
@@ -53,7 +61,7 @@ function ProductList() {
                     onSelectCategory={filterProductsByCategory}
                 />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0 bg-[url('/src/assets/page4.jpg')]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0 bg-[url('/src/assets/page4.jpg')] z-10">
                 {filteredProducts.map((product, index) => (
                     <div key={index} className="border p-4 flex flex-col justify-between shadow-md shadow-black">
                         <h2 className="font-medium text-base mb-1">{product.title}</h2>
@@ -80,7 +88,7 @@ function ProductList() {
                                 {product.category}
                             </div>
                             <div className="font-medium">$ {product.price}</div>
-                            <button className=" bg-red-400 p-2">Buy Now</button>
+                            <button className=" bg-red-400 p-2" onClick={() => addToCart(product)}>Buy Now</button>
                         </div>
                     </div>
                 ))}
