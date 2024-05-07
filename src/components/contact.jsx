@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Navbar } from './navbar';
 
 const ContactForm = () => {
     return (
         <>
-        <header><Link to="/">Home</Link></header>
+        <Navbar />
             <div className="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
                 <form>

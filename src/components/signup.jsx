@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Navbar } from './navbar';
 
 function SignupPage() {
     const [formData, setFormData] = useState({
@@ -33,7 +33,7 @@ function SignupPage() {
 
     return (
         <>
-        <header><Link to="/">Home</Link></header>
+        <Navbar />
         <div className="flex items-center justify-center bg-cover h-screen bg-[url('/src/assets/page2.jpg')]">
         <div className="w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
