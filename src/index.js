@@ -9,6 +9,7 @@ import ContactForm from './components/contact';
 import LoginForm from './components/login';
 import FeedbackForm from './components/feedback';
 import SignupPage from './components/signup';
+// import Footer from './components/footer';
 // import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
@@ -36,7 +37,6 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <SignupPage />
   },
-
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
