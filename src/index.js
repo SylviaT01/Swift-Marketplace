@@ -7,6 +7,7 @@ import ProductList from './components/ProductList';
 import ContactForm from './components/contact';
 import LoginForm from './components/login';
 import FeedbackForm from './components/feedback';
+import SignupPage from './components/signup';
 // import reportWebVitals from './reportWebVitals';
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/feedback",
     element: <FeedbackForm />
+  },
+  {
+    path: "/signup",
+    element: <SignupPage />
   },
 
 ]);

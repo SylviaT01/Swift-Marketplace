@@ -6,7 +6,8 @@ const LoginForm = () => {
   return (
     <>
     <header><Link to="/">Home</Link></header>
-      <div className="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div className="flex items-center justify-center bg-cover h-screen bg-[url('/src/assets/page2.jpg')]">
+      <div className="w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <h2 className="text-2xl font-bold mb-6">Log In</h2>
         <form>
           <div className="mb-4">
@@ -40,6 +41,7 @@ const LoginForm = () => {
             </button>
           </div>
         </form>
+      </div>
       </div>
     </>
   );

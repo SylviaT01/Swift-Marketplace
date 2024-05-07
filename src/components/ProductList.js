@@ -53,7 +53,7 @@ function ProductList() {
                     onSelectCategory={filterProductsByCategory}
                 />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0 bg-[url('/src/assets/page4.jpg')]">
                 {filteredProducts.map((product, index) => (
                     <div key={index} className="border p-4 flex flex-col justify-between shadow-md shadow-black">
                         <h2 className="font-medium text-base mb-1">{product.title}</h2>
