@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import { Link } from "react-router-dom";
 import Categories from './categories';
 import { Navbar } from './navbar';
 import { useCart } from './cart-context'
@@ -14,6 +13,7 @@ function ProductList() {
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const { addToCart } = useCart();
+    
 
     
     useEffect(() => {
