@@ -9,8 +9,8 @@ export const NavItems = () => {
         <Link to="/products" className="bg-transparent hover:bg-slate-50 py-1 px-2">Products</Link>
         <Link to="/feedback" className="bg-transparent  hover:bg-slate-50 py-1 px-2">Feedback</Link>
         <Link to="/contact" className="bg-transparent hover:bg-slate-50 py-1 px-2">Contact us</Link>
-        <Link to="/login" className="bg-red-600 text-slate-50 hover:bg-red-600/90 py-1 px-2">Login</Link>
-        <Link to="/signup" className="bg-red-600 text-slate-50 hover:bg-red-600/90 py-1 px-2">Sign Up</Link>
+        <Link to="/login" className="bg-blue-400 text-slate-50 hover:bg-blue-300/90 py-1 px-2">Login</Link>
+        <Link to="/signup" className="bg-blue-400 text-slate-50 hover:bg-blue-300/90 py-1 px-2">Sign Up</Link>
     </div>
   )
 }
