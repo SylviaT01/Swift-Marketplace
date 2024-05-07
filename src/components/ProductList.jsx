@@ -53,7 +53,6 @@ function ProductList() {
     return (
     
         <section className="mb-8">
-            {/* <Link to="/">Home</Link> */}
             <Navbar />
             <h2 className="text-xl font-semibold text-center  mb-4">Product Catalog</h2>
             <div className="text-center mb-4">

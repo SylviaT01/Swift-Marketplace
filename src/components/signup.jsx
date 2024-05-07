@@ -34,7 +34,7 @@ function SignupPage() {
     return (
         <>
         <Navbar />
-        <div className="flex items-center justify-center bg-cover h-screen bg-[url('/src/assets/page2.jpg')]">
+        <div className="flex items-center justify-center bg-cover h-screen bg-[url('/src/assets/page1.jpeg')]">
         <div className="w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
             <form onSubmit={handleSubmit} className="max-w-md mx-auto">
