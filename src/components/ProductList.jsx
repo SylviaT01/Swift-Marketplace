@@ -96,12 +96,11 @@ function ProductList() {
                                 {product.category}
                             </div>
                             <div className="font-medium">$ {product.price}</div>
-                            <button className="bg-red-400 p-2" onClick={() => openProductDetails(product)}>View Details</button>
+                            <button className="bg-blue-300 hover:bg-blue-200/90 p-1" onClick={() => openProductDetails(product)}>Buy Now</button>
                         </div>
                     </div>
                 ))}
             </div>
-            {/* Modal for Product Details */}
             {selectedProduct && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" ref={modalRef} onClick={handleOverlayClick}>
                     <ProductDetails product={selectedProduct} closeModal={closeModal} handleAddToCart={handleAddToCart} />

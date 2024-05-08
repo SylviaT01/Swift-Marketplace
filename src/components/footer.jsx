@@ -5,6 +5,8 @@ import {
   FaLinkedinIn,
   FaInstagram,
   FaTwitter,
+  FaPhone,
+  FaEnvelope,
 } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -27,6 +29,15 @@ const Footer = () => {
           >
             Swift MarketPlace
           </Link>
+          <div 
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          data-aos-delay="300"
+          className="pt-5">
+              <p className="font-medium uppercase text-lg">Opening Hours:</p>
+              <p>Mon-Sat: 10:00am - 8:00pm</p>
+              <p>Sun: 11:00am - 9:00pm</p>
+            </div>
         </div>
         <div
           className="footer-col-2 flex flex-col items-start"
@@ -37,16 +48,16 @@ const Footer = () => {
           <p className="follow-text uppercase tracking-wider text-gray-900">{`Don't forget to follow us`}</p>
           <div className="social-icons flex gap-5 p-5">
             <div className="icon-circle">
-              <FaFacebookF className="text-rose-100 mx-auto bg-blue-800" />
+              <FaFacebookF className="text-rose-100 mx-auto bg-blue-800 rounded" />
             </div>
             <div className="icon-circle">
-              <FaInstagram className="text-rose-100 mx-auto bg-pink-400" />
+              <FaInstagram className="text-rose-100 mx-auto bg-pink-400 rounded" />
             </div>
             <div className="icon-circle">
-              <FaLinkedinIn className="text-rose-100 mx-auto bg-blue-600" />
+              <FaLinkedinIn className="text-rose-100 mx-auto bg-blue-600 rounded" />
             </div>
             <div className="icon-circle">
-              <FaTwitter className="text-rose-100 mx-auto bg-black" />
+              <FaTwitter className="text-rose-100 mx-auto bg-blue-500 rounded " />
             </div>
           </div>
         </div>
@@ -61,16 +72,16 @@ const Footer = () => {
           </p>
           <div className="nav-link flex flex-col-2 mt-3 gap-10 justify-start">
             <div className="link-col-left flex flex-col text-left gap-1 uppercase">
-              <Link to="/" className="footer-nav-links">
+              <Link to="/" className="footer-nav-links hover:text-blue-500">
                 Home
               </Link>
-              <Link to="/products" className="footer-nav-links">
+              <Link to="/products" className="footer-nav-links hover:text-blue-500">
                 Products
               </Link>
-              <Link to="/feedback" className="footer-nav-links">
+              <Link to="/feedback" className="footer-nav-links hover:text-blue-500">
                 Feedback
               </Link>
-              <Link to="/contact" className="footer-nav-links">
+              <Link to="/contact" className="footer-nav-links hover:text-blue-500">
                 Contact Us
               </Link>
             </div>
@@ -88,7 +99,14 @@ const Footer = () => {
           <Link to="/contact" className="footer-btn bg-blue-400 py-4 px-6 rounded-full uppercase text-sm font-medium hover:text-blue-300 hover:bg-blue-50 duration-300">
             + New Message
           </Link>
-          <p className="font-medium text-lg">contact@swiftmarketplace.com</p>
+          <div className="flex items-center gap-2">
+            <FaEnvelope className="text-blue-400" />
+            <p className="font-medium text-lg">contact@swiftmarketplace.com</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <FaPhone className="text-blue-400" />
+            <p className="font-medium text-lg">+254718081920</p>
+          </div>
         </div>
       </div>
 

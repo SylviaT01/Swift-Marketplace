@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from './navbar';
+import Footer from './footer';
 
 function SignupPage() {
     const [formData, setFormData] = useState({
@@ -54,10 +55,11 @@ function SignupPage() {
                     <label htmlFor="confirmPassword" className="block mb-1">Confirm password</label>
                     <input type="password" id="confirmPassword" name="confirmPassword" value={formData.password} onChange={handleChange} className="border p-2 w-full" required />
                 </div>
-                <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Sign Up</button>
+                <button type="submit" className="bg-blue-300 text-white py-2 px-4 rounded hover:bg-blue-500">Sign Up</button>
             </form>
         </div>
         </div>
+        <Footer />
         </>
     );
 }

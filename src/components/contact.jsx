@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar } from './navbar';
+import Footer from './footer';
 
 const ContactForm = () => {
     return (
@@ -7,7 +8,7 @@ const ContactForm = () => {
         <Navbar />
         <div className="flex items-center justify-center bg-cover h-screen bg-[url('/src/assets/page1.jpeg')]">
             <div className="w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
+                <h2 className="section-title text-2xl font-bold mb-6">Contact Us</h2>
                 <form>
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
@@ -17,7 +18,8 @@ const ContactForm = () => {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="name"
                             type="text"
-                            placeholder="Your Name"
+                            placeholder="Write your name"
+                            required
                         />
                     </div>
                     <div className="mb-4">
@@ -28,7 +30,8 @@ const ContactForm = () => {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="email"
                             type="email"
-                            placeholder="Your Email"
+                            placeholder="Write your email"
+                            required
                         />
                     </div>
                     <div className="mb-6">
@@ -36,23 +39,25 @@ const ContactForm = () => {
                             Message
                         </label>
                         <textarea
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-20"
                             id="message"
-                            placeholder="Your Message"
+                            placeholder="Write your Message"
                             rows="4"
+                            required
                         />
                     </div>
                     <div className="flex items-center justify-between">
                         <button
-                            className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="bg-blue-300 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             type="submit"
                         >
-                            Send
+                            Submit
                         </button>
                     </div>
                 </form>
             </div>
             </div>
+            <Footer />
         </>
     );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar } from './navbar';
+import Footer from './footer';
 
 const FeedbackForm = () => {
     const [feedback, setFeedback] = useState('');
@@ -34,7 +35,7 @@ const FeedbackForm = () => {
                     </div>
                     <div className="flex items-center justify-between">
                         <button
-                            className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                            className="bg-blue-300 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                             type="submit"
                         >
                             Submit Feedback
@@ -43,6 +44,7 @@ const FeedbackForm = () => {
                 </form>
             </div>
             </div>
+            <Footer />
         </>
     );
 };
