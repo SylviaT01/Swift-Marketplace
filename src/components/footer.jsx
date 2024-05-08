@@ -15,7 +15,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="text-black bg-slate-400 py-20">
+    <footer className="text-black py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-10 wrapper w-full gap-16 md:gap-10 lg:gap-5 xl:gap-10 2xl:px-10 ">
         <div className="footer-col-1 flex flex-col items-start">
           <Link
@@ -23,7 +23,7 @@ const Footer = () => {
             data-aos-duration="1000"
             data-aos-delay="0"
             href="/"
-            className="text-4xl md:text-2xl font-semibold text-rose-400 hover:text-white duration-300"
+            className="text-4xl md:text-2xl font-semibold text-blue-400 hover:text-blue-200 duration-300"
           >
             Swift MarketPlace
           </Link>
@@ -56,21 +56,21 @@ const Footer = () => {
           data-aos-duration="1500"
           data-aos-delay="600"
         >
-          <p className="uppercase font-medium text-rose-500 tracking-wider">
+          <p className="uppercase font-medium text-blue-500 tracking-wider">
             Useful Links
           </p>
           <div className="nav-link flex flex-col-2 mt-3 gap-10 justify-start">
             <div className="link-col-left flex flex-col text-left gap-1 uppercase">
-              <Link href="/" className="footer-nav-links">
+              <Link to="/" className="footer-nav-links">
                 Home
               </Link>
-              <Link href="/products" className="footer-nav-links">
+              <Link to="/products" className="footer-nav-links">
                 Products
               </Link>
-              <Link href="/feedback" className="footer-nav-links">
+              <Link to="/feedback" className="footer-nav-links">
                 Feedback
               </Link>
-              <Link href="/contact" className="footer-nav-links">
+              <Link to="/contact" className="footer-nav-links">
                 Contact Us
               </Link>
             </div>
@@ -85,9 +85,9 @@ const Footer = () => {
           <p className="uppercase tracking-wider text-gray-900">
             Need more information?
           </p>
-          <button className="footer-btn bg-rose-400 py-4 px-6 rounded-full uppercase text-sm font-medium hover:text-rose-300 hover:bg-rose-50 duration-300">
+          <Link to="/contact" className="footer-btn bg-blue-400 py-4 px-6 rounded-full uppercase text-sm font-medium hover:text-blue-300 hover:bg-blue-50 duration-300">
             + New Message
-          </button>
+          </Link>
           <p className="font-medium text-lg">contact@swiftmarketplace.com</p>
         </div>
       </div>
