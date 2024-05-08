@@ -1,15 +1,19 @@
 import './App.css';
 import { Navbar } from './components/navbar';
-import Footer from './components/footer'
+import Footer from './components/footer';
+import Home from './components/home';
 
 function App() {
   return (
     <>
-    <div className="bg-cover h-screen bg-[url('./assets/page1.jpeg')]">
+    <div >
     <Navbar />
     </div>
     <div>
-      <Footer />
+    <Home />
+    </div>
+    <div>
+    <Footer />
     </div>
     </>
   );

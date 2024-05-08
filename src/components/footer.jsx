@@ -16,7 +16,7 @@ const Footer = () => {
 
   return (
     <footer className="text-black bg-slate-400 py-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-20 wrapper w-full gap-16 md:gap-10 lg:gap-5 xl:gap-10 2xl:px-20 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-10 wrapper w-full gap-16 md:gap-10 lg:gap-5 xl:gap-10 2xl:px-10 ">
         <div className="footer-col-1 flex flex-col items-start">
           <Link
             data-aos="fade-up"
@@ -93,7 +93,7 @@ const Footer = () => {
       </div>
 
       <p
-        className="copyright border-t border-gray-500/40 pt-20 text-gray-900 wrapper text-center uppercase"
+        className="copyright border-t border-gray-500/40 pt-10 text-gray-900 wrapper text-center uppercase"
         data-aos="zoom-in-up"
         data-aos-duration="800"
         data-aos-delay="1300"
