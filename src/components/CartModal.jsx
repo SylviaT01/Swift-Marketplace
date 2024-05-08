@@ -4,8 +4,8 @@ import { useCart } from './cart-context';
 const CartModal = ({ onClose }) => {
   const { cartItems, removeFromCart } = useCart();
 
-  const totalItems = cartItems.length;
-  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalPrice = cartItems.reduce((total, item) => total + item.totalPrice, 0);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -17,17 +17,17 @@ const CartModal = ({ onClose }) => {
           </svg>
         </button>
         <h2 className="text-2xl mb-4">Shopping Cart ({totalItems} Items)</h2>
-        {cartItems.map((item, index) => (
-          <div key={index} className="flex items-center border-b border-gray-200 py-4">
+        {cartItems.map(item => (
+          <div key={item.id} className="flex items-center border-b border-gray-200 py-4">
             <img src={item.thumbnail} alt={item.title} className="w-32 h-32 mr-4 object-cover" />
-            <div>
+            <div className="mb-6 flex flex-col">
               <p className="text-lg font-medium">{item.title}</p>
-              <p className="text-gray-500">${item.price}</p>
-              <button onClick={() => removeFromCart(index)}>Remove</button>
+              <p className="text-gray-500">${item.price} x {item.quantity}</p>
+              <button className="self-end bg-blue-300 p-1 rounded" onClick={() => removeFromCart(item.id)}>Remove</button>
             </div>
           </div>
         ))}
-        <div className="text-lg font-medium mt-4">Total: ${totalPrice}</div>
+        <div className="text-lg font-medium mt-4">Total: ${totalPrice.toFixed(2)}</div>
       </div>
     </div>
   );

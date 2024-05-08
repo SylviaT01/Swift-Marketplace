@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaShopify } from "react-icons/fa6";
 import logo1 from "../assets/logo1.png"
 import { NavItems } from './nav-items'
 import { useCart } from './cart-context'
@@ -18,9 +19,9 @@ export const Navbar = ({ text }) => {
             <div className='flex items-center justify-between container p-4'>
                 <img src={logo1} alt="logo" className='w-auto h-10 md:h-12 lg:h-14' />
                 <NavItems />
-                <button className="flex" onClick={toggleCartModal}>
-                <img src="https://img.icons8.com/ios/50/shopping-cart--v1.png" alt="cart-icon" className="w-10 h-10" />
-                <span>{cartItems.length}</span>
+                <button className="relative flex items-center gap-0" onClick={toggleCartModal}>
+                <FaShopify className="w-7 h-7 fill-blue-500"/>
+                <span className="bg-black text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">{cartItems.length}</span>
                 </button>
             </div>
             {showCartModal && <CartModal cartItems={cartItems} onClose={toggleCartModal} />}
