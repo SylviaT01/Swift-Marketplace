@@ -4,6 +4,8 @@ import { Navbar } from './navbar';
 import { useCart } from './cart-context'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 
 
@@ -31,6 +33,8 @@ function ProductList() {
 
                 // Set filtered products
                 setProducts(filteredProducts);
+
+                AOS.init();
             });
     }, []);
 
@@ -62,9 +66,9 @@ function ProductList() {
                     onSelectCategory={filterProductsByCategory}
                 />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0 bg-[url('/src/assets/page4.jpg')]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0">
                 {filteredProducts.map((product, index) => (
-                    <div key={index} className="border p-4 flex flex-col justify-between shadow-md shadow-black">
+                    <div key={index} className="border p-4 flex flex-col justify-between shadow-md rounded-lg overflow-hidden aos-init" data-aos="fade-up">
                         <h2 className="font-medium text-base mb-1">{product.title}</h2>
                         <div className="flex-grow border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition">
                             <div className="w-full h-full flex justify-center items-center">
