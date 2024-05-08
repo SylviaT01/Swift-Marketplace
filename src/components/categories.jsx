@@ -14,12 +14,12 @@ function Categories({ categories, selectedCategory, onSelectCategory }) {
 
     return (
         <div>
-            <h3 className="font-semibold mb-2">Categories</h3>
-            <ul className="flex flex-wrap items-center justify-center gap-4 mb-4">
+            <h3 className="font-medium mb-2 uppercase">Categories</h3>
+            <ul className="flex flex-wrap items-center justify-center gap-3 mb-2">
                 {categories.map(category => (
                     <li
                         key={category.id}
-                        className={`cursor-pointer border-2 rounded hover:bg-slate-100 p-1${selectedCategory === category.id ? ' font-bold' : ''}`}
+                        className={`cursor-pointer border rounded hover:bg-slate-100 p-1${selectedCategory === category.id ? ' font-bold' : ''}`}
                         onClick={() => onSelectCategory(category.id)}
                         
                     >

@@ -7,14 +7,23 @@ import 'swiper/css';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import ProductDetails from './productDetails';
+import { FaSearch } from "react-icons/fa";
 
 function ProductList() {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
     const { addToCart } = useCart();
     const modalRef = useRef(null);
+    const [filteredProducts, setFilteredProducts] = useState([]);
+
+    
+    useEffect(() => {
+        // Initialize AOS once after the initial render
+        AOS.init();
+    }, []);
 
     useEffect(() => {
         fetch('https://dummyjson.com/products?limit=0')
@@ -25,11 +34,11 @@ function ProductList() {
                 );
 
                 const uniqueCategories = [...new Set(filteredProducts.map(product => product.category))];
-                setCategories(uniqueCategories.map((category, index) => ({ id: index, name: category })));
 
+                const categoriesWithAll = [{ id: null, name: "All categories" }, ...uniqueCategories.map((category, index) => ({ id: index, name: category }))];
+                setCategories(categoriesWithAll);
                 setProducts(filteredProducts);
-
-                AOS.init();
+                setFilteredProducts(filteredProducts);
             });
     }, []);
 
@@ -37,9 +46,32 @@ function ProductList() {
         addToCart(product, quantity);
     };
 
-    const filterProductsByCategory = categoryId => {
-        setSelectedCategory(categoryId);
+    const filterProductsByCategory = (categoryId) => {
+        if (categoryId !== null) {
+            const categoryName = categories.find(cat => cat.id === categoryId)?.name;
+            setSelectedCategory(categoryId);
+            const filtered = categoryId === null ? products : products.filter(product => product.category === categoryName);
+            setFilteredProducts(filtered);
+        } else {
+            setSelectedCategory(null);
+            setFilteredProducts(products);
+        }
     };
+
+    const handleSearch = () => {
+        if (!searchQuery) {
+            // If search query is empty, reset the product list
+            setFilteredProducts(products);
+        } else {
+            // Filter products based on the search query
+            const filtered = products.filter(product => {
+                // You can adjust the search criteria based on your requirements
+                return product.title.toLowerCase().includes(searchQuery.toLowerCase());
+            });
+            setFilteredProducts(filtered);
+        }
+    };
+    
 
     const openProductDetails = (product) => {
         setSelectedProduct(product);
@@ -55,20 +87,22 @@ function ProductList() {
         }
     };
 
-    const filteredProducts = selectedCategory
-        ? products.filter(product => product.category === categories[selectedCategory].name)
-        : products;
-
     return (
         <section className="mb-8">
             <Navbar />
-            <h2 className="text-xl font-semibold text-center  mb-4">Product Catalog</h2>
-            <div className="text-center mb-4">
+            <div className="border-b">
+            <h2 className="text-xl font-semibold text-center uppercase">Product Catalog</h2>
+            </div>
+            <div className="text-center mb-2 border-b">
                 <Categories
                     categories={categories}
                     selectedCategory={selectedCategory}
                     onSelectCategory={filterProductsByCategory}
                 />
+                <div className="flex justify-center mb-2">
+                <input type="search" placeholder="Search products" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="border border-gray-300 px-4 py-2 rounded" />
+                <button className="bg-blue-300 hover:bg-blue-200/90 p-2 py-2 rounded border" onClick={handleSearch}><FaSearch /></button>
+                </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0">
                 {filteredProducts.map((product, index) => (
