@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import ProductDetails from './productDetails';
 import { FaSearch } from "react-icons/fa";
+import StarRating from './starRating';
 
 function ProductList() {
     const [products, setProducts] = useState([]);
@@ -93,7 +94,7 @@ function ProductList() {
             <div className="border-b">
             <h2 className="text-xl font-semibold text-center uppercase">Product Catalog</h2>
             </div>
-            <div className="text-center mb-2 border-b">
+            <div className=" text-center mb-2 border-b">
                 <Categories
                     categories={categories}
                     selectedCategory={selectedCategory}
@@ -104,9 +105,11 @@ function ProductList() {
                 <button className="bg-blue-300 hover:bg-blue-200/90 p-2 py-2 rounded border" onClick={handleSearch}><FaSearch /></button>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0">
+
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0 bg-blue-200 z-100 px-4 py-4 mb-0">
                 {filteredProducts.map((product, index) => (
-                    <div key={index} className="border p-4 flex flex-col justify-between shadow-md rounded-lg overflow-hidden aos-init" data-aos="fade-up">
+                    <div key={index} className="border p-4 flex flex-col justify-between shadow-md rounded-lg overflow-hidden bg-white  aos-init" data-aos="fade-up">
                         <h2 className="font-medium text-base mb-1">{product.title}</h2>
                         <div className="flex-grow border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition">
                             <div className="w-full h-full flex justify-center items-center">
@@ -130,16 +133,20 @@ function ProductList() {
                                 {product.category}
                             </div>
                             <div className="font-medium">$ {product.price}</div>
+                            <StarRating rating={product.rating} />
                             <button className="bg-blue-300 hover:bg-blue-200/90 p-1" onClick={() => openProductDetails(product)}>Buy Now</button>
                         </div>
                     </div>
                 ))}
             </div>
+
+            {/* Product Details Modal */}
             {selectedProduct && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" ref={modalRef} onClick={handleOverlayClick}>
                     <ProductDetails product={selectedProduct} closeModal={closeModal} handleAddToCart={handleAddToCart} />
                 </div>
             )}
+
         </section>
     );
 }
