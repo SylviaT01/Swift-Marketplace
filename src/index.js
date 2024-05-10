@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { CartProvider } from './components/cart-context'
+import { CartProvider } from './components/cart-context';
 import './index.css';
 import App from './App';
 import ProductList from './components/ProductList';
@@ -43,13 +43,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render
 // root.render(<RouterProvider router={router} />);
 root.render(
-  <CartProvider>
-    <RouterProvider router={router} />
-  </CartProvider>
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
 );
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>
+// <React.StrictMode>
+//   <App />
+// </React.StrictMode>
 // );
 
 // If you want to start measuring performance in your app, pass a function

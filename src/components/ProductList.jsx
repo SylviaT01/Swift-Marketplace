@@ -107,7 +107,7 @@ function ProductList() {
             </div>
 
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0 bg-blue-200 z-100 px-4 py-4 mb-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0 bg-blue-200 z-100 px-4 py-4 mb-0">
                 {filteredProducts.map((product, index) => (
                     <div key={index} className="border p-4 flex flex-col justify-between shadow-md rounded-lg overflow-hidden bg-white  aos-init" data-aos="fade-up">
                         <h2 className="font-medium text-base mb-1">{product.title}</h2>
@@ -121,7 +121,7 @@ function ProductList() {
                                     >
                                         {product.images.map((image, imageIndex) => (
                                             <SwiperSlide key={imageIndex}>
-                                                <img src={image} alt={`Product avatar ${imageIndex + 1}`} className="max-h-[300px] object-cover" />
+                                                <img src={image} alt={`Product avatar ${imageIndex + 1}`} className="max-h-[300px] image-cover" />
                                             </SwiperSlide>
                                         ))}
                                     </Swiper>
@@ -132,6 +132,7 @@ function ProductList() {
                             <div className="text-sm capitalize text-gray-500 mb-1">
                                 {product.category}
                             </div>
+                            <div className=" font-normal mb-1">Brand: {product.brand}</div>
                             <div className="font-medium">$ {product.price}</div>
                             <StarRating rating={product.rating} />
                             <button className="bg-blue-300 hover:bg-blue-200/90 p-1" onClick={() => openProductDetails(product)}>Buy Now</button>
