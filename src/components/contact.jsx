@@ -12,7 +12,8 @@ const ContactForm = () => {
         <>
         <Navbar />
         <div className="flex items-center justify-center bg-cover h-screen bg-[url('/src/assets/page1.jpeg')]">
-            <div className="w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div className="flex w-full max-w-screen-lg bg-white shadow-md rounded">
+            <div className="w-full md:w-3/8 p-8">
                 <h2 className="section-title text-2xl font-bold mb-6">Contact Us</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
@@ -23,7 +24,7 @@ const ContactForm = () => {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="name"
                             type="text"
-                            placeholder="Write your name"
+                            placeholder="Your name"
                             required
                         />
                     </div>
@@ -35,7 +36,7 @@ const ContactForm = () => {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="email"
                             type="email"
-                            placeholder="Write your email"
+                            placeholder="Your email"
                             required
                         />
                     </div>
@@ -46,7 +47,7 @@ const ContactForm = () => {
                         <textarea
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-20"
                             id="message"
-                            placeholder="Write your Message"
+                            placeholder="Your Message"
                             rows="4"
                             required
                         />
@@ -60,6 +61,28 @@ const ContactForm = () => {
                         </button>
                     </div>
                 </form>
+                </div>
+                <div className="w-full md:w-3/8 p-8 bg-gray-100 rounded">
+                        <div className="flex flex-col gap-5">
+                            <div>
+                                <p className="font-medium uppercase text-lg">Return address for online orders :</p>
+                                <p>Bilha Towers Ground Floor, Shop Number 45KE</p>
+                            </div>
+                            <div>
+                                <p className="font-medium uppercase text-lg">Phone Number:</p>
+                                <p className="text-blue-500 underline underline-offset-2">+254712345678</p>
+                            </div>
+                            <div>
+                                <p className="font-medium uppercase text-lg">Email Address:</p>
+                                <p className="text-blue-500 underline underline-offset-2">contact@swiftmarketplace.com</p>
+                            </div>
+                            <div>
+                                <p className="font-medium uppercase text-lg">Opening Hours:</p>
+                                <p>Mon-Sat: 9:00am - 8:00pm</p>
+                                <p>Sun: 12:00am - 9:00pm</p>
+                            </div>
+                        </div>
+                    </div>
             </div>
             </div>
             <Footer />
