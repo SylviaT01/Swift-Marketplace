@@ -7,27 +7,46 @@ const CartModal = ({ onClose }) => {
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
   const totalPrice = cartItems.reduce((total, item) => total + item.totalPrice, 0);
 
+  const handleProceedToCheckout = () => {
+    window.location.href = '/';
+  };
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="absolute inset-0 bg-black opacity-50" onClick={onClose}></div>
-      <div className="bg-white p-6 rounded-lg z-10 max-h-[80vh] w-[600px] overflow-y-auto">
-        <button className="absolute top-0 right-0 p-2" onClick={onClose}>
-          <svg className="w-6 h-6 text-gray-600 hover:text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-        <h2 className="text-2xl mb-4">Shopping Cart ({totalItems} Items)</h2>
-        {cartItems.map(item => (
-          <div key={item.id} className="flex items-center border-b border-gray-200 py-4">
-            <img src={item.thumbnail} alt={item.title} className="w-32 h-32 mr-4 object-cover" />
-            <div className="mb-6 flex flex-col">
-              <p className="text-lg font-medium">{item.title}</p>
-              <p className="text-gray-500">${item.price} x {item.quantity}</p>
-              <button className="self-end bg-blue-300 p-1 rounded" onClick={() => removeFromCart(item.id)}>Remove</button>
-            </div>
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-gray-900 bg-opacity-50">
+      <div className="bg-white rounded-lg w-[500px] max-h-[80vh] overflow-y-auto">
+        <div className="p-6">
+          <div className="flex justify-between items-center border-b border-gray-200 pb-4">
+            <h2 className="text-xl font-semibold">Shopping Cart ({totalItems} Items)</h2>
+            <button onClick={onClose} className="text-gray-500 hover:text-gray-600 focus:outline-none">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
-        ))}
-        <div className="text-lg font-medium mt-4">Total: ${totalPrice.toFixed(2)}</div>
+          <div className="mt-4">
+            {cartItems.map(item => (
+              <div key={item.id} className="flex items-center justify-between py-2 border-b border-gray-200">
+                <div className="flex items-center">
+                  <img src={item.thumbnail} alt={item.title} className="w-16 h-16 mr-3 object-cover" />
+                  <div>
+                    <p className="text-sm font-semibold">{item.title}</p>
+                    <p className="text-gray-500">${item.price.toFixed(2)} x {item.quantity}</p>
+                  </div>
+                </div>
+                <button onClick={() => removeFromCart(item.id)} className="text-sm text-red-500 focus:outline-none hover:text-red-600">Remove</button>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex justify-between items-center">
+            <p className="text-lg font-semibold">Total:</p>
+            <p className="text-lg font-semibold">${totalPrice.toFixed(2)}</p>
+          </div>
+          <div className="mt-6">
+            <button onClick={handleProceedToCheckout} className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none">
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

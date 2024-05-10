@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar } from './navbar';
 import Footer from './footer';
 
@@ -15,17 +16,22 @@ const LoginForm = () => {
     <Navbar />
     <div className="flex items-center justify-center bg-cover h-screen bg-[url('/src/assets/page1.jpeg')]">
       <div className="w-11/12 md:w-2/3 lg:w-1/2 xl:w-1/3 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <h2 className="text-2xl font-bold mb-6">Log In</h2>
+       <div className='flex flex-col justify-center items-center'>
+        <h2 className="text-xl font-semibold mb-2">Welcome to Swift MarketPlace</h2>
+        <p className="text-xl font-normal mb-6">Type your e-mail to log in</p>
+        </div>
         <form onSubmit={handleLogin}>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
-              Username
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email or phone">
+              Email or Phone Number
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
+              id="email"
               type="text"
-              placeholder="Your Username"
+              placeholder="Your email"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$|^[0-9]{10}$"
+              title="Please enter a valid email address or a 10-digit phone number"
               required
             />
           </div>
@@ -40,6 +46,9 @@ const LoginForm = () => {
               placeholder="Your Password"
               required
             />
+          </div>
+          <div>
+            Don't have an account? <Link to="/signup" className="text-blue-500">Register</Link>
           </div>
           <div className="flex items-center justify-between">
             <button
