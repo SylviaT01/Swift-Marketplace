@@ -101,6 +101,17 @@ A functional and user-friendly shopping platform, Swift MarketPlace, showcasing 
 - [AOS](https://michalsnik.github.io/aos/)
 - [Swiper](https://swiperjs.com/react)
 
+## Live Demo
+The project is live at [Swift MarketPlace](https://swift-marketplace.vercel.app/)
+
+## Setup
+1. Clone this repository
+*** git clone git@github.com:SylviaT01/Swift-Marketplace.git ***
+2. Install dependencies
+*** npm install ***
+3. Run the application
+*** npm start ***
+
 
 
 
