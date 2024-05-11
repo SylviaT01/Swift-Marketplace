@@ -17,7 +17,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="text-black py-20">
+    <footer className="text-black py-20 pt-4 bg-slate-300">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-10 wrapper w-full gap-16 md:gap-10 lg:gap-5 xl:gap-10 2xl:px-10 ">
         <div className="footer-col-1 flex flex-col items-start">
           <Link
@@ -25,7 +25,7 @@ const Footer = () => {
             data-aos-duration="1000"
             data-aos-delay="0"
             href="/"
-            className="text-4xl md:text-2xl font-semibold text-blue-400 hover:text-blue-200 duration-300"
+            className="text-4xl md:text-2xl font-semibold text-blue-400 hover:text-blue-500 duration-300"
           >
             Swift MarketPlace
           </Link>
@@ -78,6 +78,8 @@ const Footer = () => {
               <Link to="/products" className="footer-nav-links hover:text-blue-500">
                 Products
               </Link>
+              <Link to="/about" className="footer-nav-links hover:text-blue-500">
+                About Us</Link>
               <Link to="/feedback" className="footer-nav-links hover:text-blue-500">
                 Feedback
               </Link>

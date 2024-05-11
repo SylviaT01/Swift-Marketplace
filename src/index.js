@@ -9,6 +9,7 @@ import ContactForm from './components/contact';
 import LoginForm from './components/login';
 import FeedbackForm from './components/feedback';
 import SignupPage from './components/signup';
+import AboutUs from './components/about';
 // import Footer from './components/footer';
 // import reportWebVitals from './reportWebVitals';
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignupPage />
+  },
+  {
+    path: "/about",
+    element: <AboutUs />
   },
 ]);
 

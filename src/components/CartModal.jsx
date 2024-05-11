@@ -42,7 +42,7 @@ const CartModal = ({ onClose }) => {
             <p className="text-lg font-semibold">${totalPrice.toFixed(2)}</p>
           </div>
           <div className="mt-6">
-            <button onClick={handleProceedToCheckout} className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none">
+            <button onClick={handleProceedToCheckout} className="w-full bg-blue-400 text-white py-2 rounded-lg hover:bg-blue-500 focus:outline-none">
               Proceed to Checkout
             </button>
           </div>
