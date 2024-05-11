@@ -118,6 +118,21 @@ git clone git@github.com:SylviaT01/Swift-Marketplace.git
  npm start
  ```
 
+## Requirements
+- Programming knowledge, HTML, JavaScript and React.js
+- Visual Studio as code editor
+- Vercel for deployment purposes
+
+## Contributions
+Contributions are welcome.Email me at [Sylvia Chebet](sylviachebet03@gmail.com).Feel free to fork and make pull requests.
+
+## Author
+- [Sylvia Chebet](https://github.com/SylviaT01)
+
+## Copyright and license information
+The project is licensed under [MIT License](LICENSE)
+
+
 
 
 
