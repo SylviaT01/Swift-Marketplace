@@ -35,8 +35,8 @@ const Footer = () => {
           data-aos-delay="300"
           className="pt-5">
               <p className="font-medium uppercase text-lg">Opening Hours:</p>
-              <p>Mon-Sat: 10:00am - 8:00pm</p>
-              <p>Sun: 11:00am - 9:00pm</p>
+              <p>Mon-Sat: 9:00am - 8:00pm</p>
+              <p>Sun: 12:00am - 9:00pm</p>
             </div>
         </div>
         <div
@@ -105,7 +105,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2">
             <FaPhone className="text-blue-400" />
-            <p className="font-medium text-lg">+254718081920</p>
+            <p className="font-medium text-lg">+254712345678</p>
           </div>
         </div>
       </div>
