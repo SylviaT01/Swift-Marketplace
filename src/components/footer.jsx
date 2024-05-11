@@ -72,18 +72,18 @@ const Footer = () => {
           </p>
           <div className="nav-link flex flex-col-2 mt-3 gap-10 justify-start">
             <div className="link-col-left flex flex-col text-left gap-1 uppercase">
-              <Link to="/" className="footer-nav-links hover:text-blue-500">
+              <Link to="/" className="footer-nav-links hover:text-blue-500 hover:underline">
                 Home
               </Link>
-              <Link to="/products" className="footer-nav-links hover:text-blue-500">
+              <Link to="/products" className="footer-nav-links hover:text-blue-500 hover:underline">
                 Products
               </Link>
-              <Link to="/about" className="footer-nav-links hover:text-blue-500">
+              <Link to="/about" className="footer-nav-links hover:text-blue-500 hover:underline">
                 About Us</Link>
-              <Link to="/feedback" className="footer-nav-links hover:text-blue-500">
+              <Link to="/feedback" className="footer-nav-links hover:text-blue-500 hover:underline">
                 Feedback
               </Link>
-              <Link to="/contact" className="footer-nav-links hover:text-blue-500">
+              <Link to="/contact" className="footer-nav-links hover:text-blue-500 hover:underline">
                 Contact Us
               </Link>
             </div>
