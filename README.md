@@ -106,11 +106,11 @@ The project is live at [Swift MarketPlace](https://swift-marketplace.vercel.app/
 
 ## Setup
 1. Clone this repository
-*** git clone git@github.com:SylviaT01/Swift-Marketplace.git ***
+``` git clone git@github.com:SylviaT01/Swift-Marketplace.git ```
 2. Install dependencies
-*** npm install ***
+``` npm install ```
 3. Run the application
-*** npm start ***
+``` npm start ```
 
 
 
