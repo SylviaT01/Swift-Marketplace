@@ -2,14 +2,21 @@ import React, { useState } from 'react';
 import { Navbar } from './navbar';
 import Footer from './footer';
 import survey from '../assets/survey.jpg'
+import { FaStar } from 'react-icons/fa';
 
 const FeedbackForm = () => {
     const [feedback, setFeedback] = useState('');
+    const [rating, setRating] = useState(0);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         window.location.href = '/';
         setFeedback('');
+        setRating(0);
+    };
+
+    const handleStarClick = (value) => {
+        setRating(value);
     };
 
     return (
@@ -34,6 +41,22 @@ const FeedbackForm = () => {
                                         onChange={(e) => setFeedback(e.target.value)}
                                     />
                                 </div>
+                                <div className="mb-6">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="rating">
+                                        Rate our services:
+                                    </label>
+                                    <div className='flex flex-row'>
+                                        {[...Array(5)].map((_, index) => (
+                                            <FaStar
+                                                key={index}
+                                                className="cursor-pointer text-yellow-400"
+                                                onClick={() => handleStarClick(index + 1)}
+                                                color={index < rating ? "#ffc107" : "#e4e5e9"}
+                                                size={30}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
                                 <div className="flex items-center justify-between">
                                     <button
                                         className="bg-blue-300 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -54,3 +77,5 @@ const FeedbackForm = () => {
 };
 
 export default FeedbackForm;
+
+

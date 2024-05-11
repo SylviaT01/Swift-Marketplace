@@ -9,6 +9,7 @@ import AOS from 'aos';
 import ProductDetails from './productDetails';
 import { FaSearch } from "react-icons/fa";
 import StarRating from './starRating';
+import Footer from './footer';
 
 function ProductList() {
     const [products, setProducts] = useState([]);
@@ -89,7 +90,7 @@ function ProductList() {
     };
 
     return (
-        <section className="mb-8">
+        <section>
             <Navbar />
             <div className="border-b">
             <h2 className="text-xl font-semibold text-center uppercase">Product Catalog</h2>
@@ -107,7 +108,7 @@ function ProductList() {
             </div>
 
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0 bg-blue-200 z-100 px-4 py-4 mb-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[30px] max-w-sm mx-auto md:max-w-none md:mx-0 bg-blue-50 z-100 px-4 py-4 mb-0">
                 {filteredProducts.map((product, index) => (
                     <div key={index} className="border p-4 flex flex-col justify-between shadow-md rounded-lg overflow-hidden bg-white  aos-init" data-aos="fade-up">
                         <h2 className="font-medium text-base mb-1">{product.title}</h2>
@@ -147,7 +148,7 @@ function ProductList() {
                     <ProductDetails product={selectedProduct} closeModal={closeModal} handleAddToCart={handleAddToCart} />
                 </div>
             )}
-
+            <Footer />
         </section>
     );
 }
