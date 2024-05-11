@@ -1,5 +1,8 @@
 ![Home Page Screenshot](/src/assets/FrontPage.png)
 
+# Swift MarketPlace
+Welcome to Swift MarketPlace, your ultimate destination for online shopping convenience and variety. Swift MarketPlace is a modern and innovative online shopping platform built using React.js, offering users a seamless and diverse shopping experience. With visually engaging designs, smooth animations powered by AOS, captivating parallax effects, and interactive product browsing using Swiper, Swift MarketPlace aims to redefine the online shopping experience.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -70,3 +73,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Minimum Viable Product
+A functional and user-friendly shopping platform, Swift MarketPlace, showcasing a diverse range of products sourced from the DummyJSON API. 
+## Features
+- A visually engaging landing page.
+- Product filtering based on categories.
+- Product catalog
+- Product feedback and ratings.
+- A simple shopping cart feature 
+- Contacts section.
+- API integration to enhance functionality.
+## Objectives
+- To create a visually appealing and user-friendly shopping platform.
+- To showcase a diverse range of products sourced from the DummyJSON API.
+- To provide a seamless shopping experience for users.
+- To enhance the functionality of the platform through API integration.
+- To create a simple shopping cart feature.
+- To provide a feedback and rating system for products.
+- To provide a contacts section for users to reach out to the platform.
+
+## Technologies Used
+- [React](https://reactjs.org/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Google font](https://fonts.google.com/)
+- [DummyJSON](https://dummyjson.com/)
+- [AOS](https://michalsnik.github.io/aos/)
+- [Swiper](https://swiperjs.com/react)
+
+
+
+
+
+
