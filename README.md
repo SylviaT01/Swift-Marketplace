@@ -29,6 +29,7 @@ A functional and user-friendly shopping platform, Swift MarketPlace, showcasing 
 - [Google fonts](https://fonts.google.com/)
 - [AOS](https://michalsnik.github.io/aos/)
 - [Swiper](https://swiperjs.com/react)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## Live Demo
 The project is live at [Swift MarketPlace](https://swift-marketplace.vercel.app/)
