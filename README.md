@@ -1,6 +1,7 @@
 ![Home Page Screenshot](/src/assets/FrontPage.png)
 
 # Swift MarketPlace
+## Introduction
 Welcome to Swift MarketPlace, your ultimate destination for online shopping convenience and variety. Swift MarketPlace is a modern and innovative online shopping platform built using React.js, offering users a seamless and diverse shopping experience. With visually engaging designs, smooth animations powered by AOS, captivating parallax effects, and interactive product browsing using Swiper, Swift MarketPlace aims to redefine the online shopping experience.
 
 ## Minimum Viable Product
@@ -12,7 +13,7 @@ A functional and user-friendly shopping platform, Swift MarketPlace, showcasing 
 - Product feedback and ratings.
 - A simple shopping cart feature 
 - Contacts section.
-- API integration to enhance functionality.
+- API integration-[DummyJSON](https://dummyjson.com/).
 ## Objectives
 - To create a visually appealing and user-friendly shopping platform.
 - To showcase a diverse range of products sourced from the DummyJSON API.
@@ -25,8 +26,7 @@ A functional and user-friendly shopping platform, Swift MarketPlace, showcasing 
 ## Technologies Used
 - [React](https://reactjs.org/)
 - [React Icons](https://react-icons.github.io/react-icons/)
-- [Google font](https://fonts.google.com/)
-- [DummyJSON](https://dummyjson.com/)
+- [Google fonts](https://fonts.google.com/)
 - [AOS](https://michalsnik.github.io/aos/)
 - [Swiper](https://swiperjs.com/react)
 
@@ -53,7 +53,8 @@ git clone git@github.com:SylviaT01/Swift-Marketplace.git
 - Vercel for deployment purposes
 
 ## Contributions
-Contributions are welcome.Email me at [Sylvia Chebet](sylviachebet03@gmail.com).Feel free to fork and make pull requests.
+Contributions are welcome.Email me at [Sylvia Chebet](sylviachebet03@gmail.com).
+Feel free to fork and make pull requests.
 
 ## Author
 - [Sylvia Chebet](https://github.com/SylviaT01)
