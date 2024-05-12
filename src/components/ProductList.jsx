@@ -9,7 +9,6 @@ import AOS from 'aos';
 import ProductDetails from './productDetails';
 import { FaSearch } from "react-icons/fa";
 import StarRating from './starRating';
-import Footer from './footer';
 
 function ProductList() {
     const [products, setProducts] = useState([]);
@@ -67,7 +66,6 @@ function ProductList() {
         } else {
             // Filter products based on the search query
             const filtered = products.filter(product => {
-                // You can adjust the search criteria based on your requirements
                 return product.title.toLowerCase().includes(searchQuery.toLowerCase());
             });
             setFilteredProducts(filtered);
@@ -148,7 +146,6 @@ function ProductList() {
                     <ProductDetails product={selectedProduct} closeModal={closeModal} handleAddToCart={handleAddToCart} />
                 </div>
             )}
-            <Footer />
         </section>
     );
 }
