@@ -23,7 +23,7 @@ const Home = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000, // Adjust as needed
+        autoplaySpeed: 3000,
     };
 
     const goToNextSlide = () => {
