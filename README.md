@@ -54,8 +54,7 @@ git clone git@github.com:SylviaT01/Swift-Marketplace.git
 - Vercel for deployment purposes
 
 ## Contributions
-Contributions are welcome.Email me at [sylviachebet03@gmail.com](sylviachebet03@gmail.com).
-Feel free to fork and make pull requests.
+Contributions are welcome.Feel free to fork and make pull requests.
 
 ## Author
 - [Sylvia Chebet](https://github.com/SylviaT01)
