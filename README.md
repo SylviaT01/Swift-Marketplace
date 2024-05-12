@@ -2,7 +2,7 @@
 
 # Swift MarketPlace
 ## Introduction
-Welcome to Swift MarketPlace, your ultimate destination for online shopping convenience and variety. Swift MarketPlace is a modern and innovative online shopping platform built using React.js, offering users a seamless and diverse shopping experience. With visually engaging designs, smooth animations powered by AOS, captivating parallax effects, and interactive product browsing using Swiper, Swift MarketPlace aims to redefine the online shopping experience.
+Swift MarketPlace is a modern and innovative online shopping platform built using React.js, offering users a seamless and diverse shopping experience. With visually engaging designs, smooth animations powered by AOS, captivating parallax effects, and interactive product browsing using Swiper, Swift MarketPlace aims to redefine the online shopping experience.
 
 ## Minimum Viable Product
 A functional and user-friendly shopping platform, Swift MarketPlace, showcasing a diverse range of products sourced from the DummyJSON API. 
@@ -59,7 +59,7 @@ Feel free to fork and make pull requests.
 ## Author
 - [Sylvia Chebet](https://github.com/SylviaT01)
 
-## Copyright and license information
+## Copyright and License information
 The project is licensed under [MIT License](LICENSE)
 
 
